@@ -19,7 +19,13 @@ public class ataca : MonoBehaviour {
 		//if(begin)
 		rb.velocity = transform.forward *speed;
 	}
-	
+
+	void OnTriggerEnter(Collider other)
+	{
+		//Destroy (gameObject);
+		//transform.Translate(new Vector3 (Random.Range (-30, 30), Random.Range (-1, 1), 8));
+	}
+
 	/*void OnCollisionEnter(Collision collision)
     {
         ContactPoint contact = collision.contacts[0];
