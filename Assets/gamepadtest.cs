@@ -11,8 +11,8 @@ public class gamepadtest : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown ("Fire1"))
-			transform.Rotate (transform.rotation.eulerAngles + new Vector3 (0f, 0.1f, 0f));
+		//if (Input.GetButtonDown ("Fire1"))
+		//	transform.Rotate (transform.rotation.eulerAngles + new Vector3 (0f, 0.1f, 0f));
 
 		float h = Input.GetAxis ("Horizontal");
 		float v = Input.GetAxis ("Vertical");
