@@ -45,7 +45,7 @@ public class socketclient : MonoBehaviour {
 
 	void Connect()
 	{
-		client.Connect ("192.168.43.118", 25000);
+		client.Connect ("192.168.11.137", 25000);
 	}
 
 	/*static public void SendJoystickInfo(float hDelta, float vDelta)
