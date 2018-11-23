@@ -7,7 +7,13 @@ using UnityEngine;
 public class socketclient : MonoBehaviour {
 
 	static NetworkClient client;
+	public Transform vrcamera;
 	bool cnd = false;
+	
+	public class MyMsgType {
+        public static short Player = MsgType.Highest + 1;
+    };
+	
 	void OnGUI()
 	{
 		string ipaddress = Network.player.ipAddress;
@@ -24,6 +30,14 @@ public class socketclient : MonoBehaviour {
 		}
 	}
 
+	public class PlayerMessage : MessageBase
+	{
+		public Vector3 forward;
+		public Vector3 right;
+		public float h;
+		public float v;
+	}
+
 	// Use this for initialization
 	void Start () {
 		client = new NetworkClient ();
@@ -37,15 +51,22 @@ public class socketclient : MonoBehaviour {
 			float h = Input.GetAxis ("Horizontal");
 			float v = Input.GetAxis ("Vertical");
 
-			StringMessage msg = new StringMessage();
+			/*StringMessage msg = new StringMessage();
 			msg.value = h + "|" + v;
-			client.Send (888, msg);
+			client.Send (888, msg);*/
+
+			PlayerMessage msg = new PlayerMessage();
+			msg.forward = vrcamera.TransformDirection (Vector3.forward);
+			msg.right = vrcamera.TransformDirection (Vector3.right);
+			msg.h = h;
+			msg.v = v;
+			client.Send (MyMsgType.Player, msg);
 		}
 	}
 
 	void Connect()
 	{
-		client.Connect ("192.168.43.118", 25000);
+		client.Connect ("192.168.11.216", 25000);
 	}
 
 	/*static public void SendJoystickInfo(float hDelta, float vDelta)

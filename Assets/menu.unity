@@ -2399,6 +2399,7 @@ MonoBehaviour:
   toggleangle: 30
   speed: 3
   throwing: 20
+  moveforward: 0
   lifetext: {fileID: 2146676140}
   countertext: {fileID: 1101812609}
   finished: {fileID: 415819848}

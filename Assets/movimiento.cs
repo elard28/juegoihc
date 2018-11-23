@@ -9,7 +9,7 @@ public class movimiento : MonoBehaviour {
 	public float toggleangle = 30.0f;
 	public float speed = 3.0f;
 	public float throwing = 20.0f;
-	//public bool  moveforward;
+	public bool  moveforward;
 
 	public Text lifetext;
 	public Text countertext;
@@ -50,18 +50,39 @@ public class movimiento : MonoBehaviour {
 		lifetext.text = "Vidas: "+lives;
 		countertext.text = "Completos: "+completed;
 
+		/*float h = Input.GetAxis ("Horizontal");
+		float v = Input.GetAxis ("Vertical");
+
+		/Vector3 forward = vrcamera.TransformDirection (Vector3.forward);
+		//Vector3 forward = vrcamera.eulerAngles;
+		Debug.Log (forward);
+
+		Vector3 pad = new Vector3 (v*1.5f,0.0f,-h*1.5f);
+		cc.SimpleMove (pad * speed);*/
+
 		float h = Input.GetAxis ("Horizontal");
 		float v = Input.GetAxis ("Vertical");
 
-		Vector3 forward = vrcamera.TransformDirection (Vector3.forward);
-		Debug.Log (forward);
+		//Debug.Log (v);
 
+		if (v != 0) {
+			Vector3 forward = vrcamera.TransformDirection (Vector3.forward);
+			cc.SimpleMove (forward * speed * v);
+			Debug.Log (forward);
+		}
+		if (h != 0) {
+			Vector3 forward = vrcamera.TransformDirection (Vector3.right);
+			cc.SimpleMove (forward * speed * h);
+			Debug.Log (forward);
+		}
+		if (v == 0 && h == 0) {
+			cc.SimpleMove (new Vector3 (0f, 0f, 0f));
+			Debug (new Vector3 (0f, 0f, 0f));
+		}
 
-		Vector3 pad = new Vector3 (v*1.5f,0.0f,-h*1.5f);
+		//cc.transform.Rotate (new Vector3 (0f, 0f - h * 1.5f));
+		//cc.SimpleMove (new Vector3 (v * 1.5f, 0f, 0f) * speed);
 
-		//Debug.Log (pad);
-
-		cc.SimpleMove (pad * speed);
 
 		if (Input.GetButtonUp ("Fire1")) {
 			holding = false;
