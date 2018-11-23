@@ -1770,6 +1770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a50f0f2eb05f5469bee72c1cafceec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vrcamera: {fileID: 63950382}
 --- !u!4 &1436061211
 Transform:
   m_ObjectHideFlags: 0

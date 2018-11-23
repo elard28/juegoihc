@@ -64,21 +64,19 @@ public class movimiento : MonoBehaviour {
 		float v = Input.GetAxis ("Vertical");
 
 		//Debug.Log (v);
-
+		Vector3 forward = new Vector3(0f,0f,0f);
 		if (v != 0) {
-			Vector3 forward = vrcamera.TransformDirection (Vector3.forward);
+			forward = vrcamera.TransformDirection (Vector3.forward);
 			cc.SimpleMove (forward * speed * v);
-			Debug.Log (forward);
 		}
 		if (h != 0) {
-			Vector3 forward = vrcamera.TransformDirection (Vector3.right);
+			forward = vrcamera.TransformDirection (Vector3.right);
 			cc.SimpleMove (forward * speed * h);
-			Debug.Log (forward);
 		}
 		if (v == 0 && h == 0) {
-			cc.SimpleMove (new Vector3 (0f, 0f, 0f));
-			Debug (new Vector3 (0f, 0f, 0f));
+			cc.SimpleMove (forward);
 		}
+		Debug.Log (forward);
 
 		//cc.transform.Rotate (new Vector3 (0f, 0f - h * 1.5f));
 		//cc.SimpleMove (new Vector3 (v * 1.5f, 0f, 0f) * speed);

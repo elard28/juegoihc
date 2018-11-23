@@ -254,7 +254,7 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 eca6588934e978a74735e6737af683a8 Assembly-CSharp.dll:.GvrReticlePointer
-f0cef2e8ebab610d4cbec4f65f3598c9 Assembly-CSharp.dll:.movimiento
+59730b01f52eab4a4878eb4b6212512c Assembly-CSharp.dll:.movimiento
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 2a13deadfd379d1bb4ab0ebd2c20ca7e Assembly-CSharp.dll:.GvrLaserVisual
 24f6a3eb1c9b232bcf23fbcef06cdf98 Assembly-CSharp.dll:.GvrControllerVisual
@@ -304,7 +304,7 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 3d1b89310e77c34bc0c8d7132231345c Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 15bea26698002c6c4a3087131232ce5c Vuforia.UnityExtensions.dll:Vuforia.WordBehaviour
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.socketclient
+4fee02aef5b8bcaccb22f4039fe5e9e0 Assembly-CSharp.dll:.socketclient
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Gvr.Internal.EmulatorClientSocket
 7d05c1a36ca8db05546065b852216990 Assembly-CSharp.dll:.GvrControllerInput
 e399fc54e753911801f12ac57c8fc414 Assembly-CSharp.dll:GoogleVR.HelloVR.HelloVRManager
