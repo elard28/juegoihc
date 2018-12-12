@@ -16,9 +16,9 @@ public class movimiento : MonoBehaviour {
 	public Text finished;
 
 	public int lives;
-	private int completed = 0;
+	public int completed = 0;
 
-	private bool holding = false;
+	public bool holding = false;
 	private GameObject hold;
 
 	private CharacterController cc;
@@ -76,7 +76,7 @@ public class movimiento : MonoBehaviour {
 		if (v == 0 && h == 0) {
 			cc.SimpleMove (forward);
 		}
-		Debug.Log (forward);
+		//Debug.Log (forward);
 
 		//cc.transform.Rotate (new Vector3 (0f, 0f - h * 1.5f));
 		//cc.SimpleMove (new Vector3 (v * 1.5f, 0f, 0f) * speed);
@@ -114,6 +114,7 @@ public class movimiento : MonoBehaviour {
 				throwing = 20.0f;
 				holding = true;
 				hold = col.gameObject;
+				Debug.Log("Presiona boton");
 			}
 		}
 	}

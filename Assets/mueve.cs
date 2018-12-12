@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class mueve : MonoBehaviour {
 
+	public int numcube;
 	public float spinvalue = 90;
 	// Use this for initialization
 	void Start () {

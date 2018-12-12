@@ -13,7 +13,8 @@ public class GameCo : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		StartCoroutine(spawnwaves());
+		spawns = enemies.transform.position;
+		//StartCoroutine(spawnwaves());
 	}
 	
 	// Update is called once per frame
@@ -25,10 +26,17 @@ public class GameCo : MonoBehaviour {
 	{
 		yield return new WaitForSeconds (start);
 		for (;;) {
-			Vector3 spawnpositions = new Vector3 (Random.Range (-spawns.x, spawns.x), Random.Range (-spawns.y, spawns.y), spawns.z);
+			Vector3 spawnpositions = new Vector3 (spawns.x, spawns.y, spawns.z);
 			Quaternion spawnrotation = Quaternion.identity;
 			Instantiate (enemies, spawnpositions, spawnrotation);
 			yield return new WaitForSeconds (wait);
 		}
+	}
+
+	public void spawnwave()
+	{
+		Vector3 spawnpositions = new Vector3 (spawns.x, spawns.y, spawns.z);
+		Quaternion spawnrotation = Quaternion.identity;
+		Instantiate (enemies, spawnpositions, spawnrotation);
 	}
 }
